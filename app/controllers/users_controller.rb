@@ -7,36 +7,22 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def new
-    @user = User.new
-  end
-
-  def create
-    @user = User.new(session_params)
-    if @user.save
-      log_in @user
-      redirect_to @user
-    else
-      render 'new'
-    end
-  end
-
   def edit
     @user = User.find(params[:id])
   end
 
   def update
     @user = User.find(params[:id])
-    if @user == @current_user
+    if @user == current_user
       new_user = session_params
       if @user.update(new_user)
         redirect_to users_path
       else
-        render 'edit'
+        redirect_to edit_path
       end
     else
-      flash.now[:danger] = "Ce n'est pas votre profil, vous ne pouvez pas le modifier"
-      render 'edit'
+      flash[:danger] = "Ce n'est pas votre profil, vous ne pouvez pas le modifier"
+      redirect_to edit_path
     end
   end
 
@@ -48,6 +34,6 @@ class UsersController < ApplicationController
 
   private
     def session_params
-      params.require(:session).permit(:username, :email, :password)
+      params.require(:user).permit(:username, :email, :password)
     end
 end

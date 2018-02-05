@@ -1,0 +1,25 @@
+<% provide(:title, "Log in") %>
+
+<% if $test == 1 %>
+  <% flash.now[:danger] = 'hey login-toi pour y acceder' %>
+  <% $test = 0 %>
+<% end %>
+
+<h1>Log in</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+    <% end %>
+
+    <p>Vous etes nouveau? <%= link_to "Creer un compte", signup_path %></p>
+  </div>
+</div>
