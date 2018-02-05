@@ -1,2 +1,10 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><strong>Pseudo : </strong><%= @user.username %></h1>
+
+<h1><strong>Email : </strong><%= @user.email %></h1>
+
+<br/>
+
+<p>
+	<a href='<%= users_path %>' class='btn btn-primary'>Revenir à la liste des Users</a>
+	<a href='<%= edit_user_path %>' class='btn btn-warning'>Editer</a>
+</p>
