@@ -1,24 +1,15 @@
-# README
+# Salut salut !
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### J'ai effectué toutes les étapes du projet. Jusqu'au 5.3 inclus.
 
-Things you may want to cover:
+### Vous pouvez donc tester de créer un nouvel utilisateur, de vous login ou encore de modifier ou supprimer votre profil.
 
-* Ruby version
+#### Attention, cela est possible seulement si c'est le votre!
 
-* System dependencies
+### De plus, vous pouvez effectuer la commande `rails test` qui englobe plusieurs tests de login, signup etc...
 
-* Configuration
+### Amusez vous bien!
 
-* Database creation
+___
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### PS : n'oubliez pas de lancer la commande `bundle install --without production` avant de demarrer ;)
