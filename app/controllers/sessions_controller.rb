@@ -14,6 +14,10 @@ class SessionsController < ApplicationController
   end
 
   def login
+    if @test == 1
+      flash[:danger] = 'hey login-toi pour y accéder'
+      @test = 0
+    end
   end
 
   def create_login

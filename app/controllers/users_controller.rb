@@ -28,8 +28,13 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
-    @user.destroy
-    redirect_to users_path
+    if @user == current_user
+      @user.destroy
+      redirect_to users_path
+    else
+      flash[:danger] = "Ce n'est pas votre profil, vous ne pouvez pas le supprimer"
+      redirect_to user_path(@user.id)
+    end
   end
 
   private

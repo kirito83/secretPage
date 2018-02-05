@@ -1,8 +1,8 @@
 <% provide(:title, "Log in") %>
 
-<% if $test == 1 %>
+<% test = params[:test] %>
+<% if test == '1' %>
   <% flash.now[:danger] = 'hey login-toi pour y acceder' %>
-  <% $test = 0 %>
 <% end %>
 
 <h1>Log in</h1>

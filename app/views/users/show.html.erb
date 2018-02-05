@@ -7,4 +7,5 @@
 <p>
 	<a href='<%= users_path %>' class='btn btn-primary'>Revenir à la liste des utilisateurs</a>
 	<a href='/sessions/<%=params[:id]%>/edit' class='btn btn-warning'>Editer</a>
+	<a href='<%= user_path(@user.id) %>' class='btn btn-danger' data-confirm='Etes vous sur?' data-method='DELETE'>Supprimer</a>
 </p>
